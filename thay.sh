@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Đường dẫn đến file vi.txt
-vi_file="/root/worker1-10m/vi.txt"
+vi_file="/root/worker2-24h/vi.txt"
 
 # Đường dẫn đến file JSON cần thay đổi
-json_file="/root/worker1-10m/config.json"
+json_file="/root/worker2-24h/config.json"
 
 # Đường dẫn đến file Python cần thay đổi
-py_file="/root/worker1-10m/model.py"  # Thay đổi đường dẫn tới file model.py tại đây
+py_file="/root/worker2-24h/model.py"  # Thay đổi đường dẫn tới file model.py tại đây
 
 # Kiểm tra sự tồn tại của file vi.txt
 if [ ! -f "$vi_file" ]; then
