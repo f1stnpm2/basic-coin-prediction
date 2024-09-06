@@ -32,7 +32,11 @@ new_value_address=$(head -n 1 "$vi_file")
 sed -i 's/"addressRestoreMnemonic": ".*"/"addressRestoreMnemonic": "'"$new_value_address"'"/g' "$json_file"
 echo "Đã thay đổi giá trị 'addressRestoreMnemonic' trong file config.json."
 
-# Đọc dòng thứ hai từ file vi.txt và thay đổi "fluctuation_range = 0.001 * predicted_price" trong model.py
-new_value_fluctuation=$(sed -n '2p' "$vi_file")
-sed -i 's/fluctuation_range = 0.001 \* predicted_price/fluctuation_range = '"$new_value_fluctuation"' \* predicted_price/g' "$py_file"
-echo "Đã thay đổi giá trị của fluctuation_range trong file model.py."
+# Đọc dòng thứ hai từ file vi.txt và lưu giá trị vào biến y_value
+y_value=$(sed -n '2p' "$vi_file")
+
+# Thay thế giá trị 0.0010 trong model.py thành giá trị từ vi.txt
+# Thay thế giá trị 0,0010 trong model.py thành giá trị từ vi.txt
+sed -i 's/fluctuation_range = 0,0010/fluctuation_range = '"$y_value"'/g' "$py_file"
+
+echo "Đã thay đổi giá trị trong file model.py."
