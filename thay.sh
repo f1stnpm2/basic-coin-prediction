@@ -35,8 +35,7 @@ echo "Đã thay đổi giá trị 'addressRestoreMnemonic' trong file config.jso
 # Đọc dòng thứ hai từ file vi.txt và lưu giá trị vào biến y_value
 y_value=$(sed -n '2p' "$vi_file")
 
-# Thay thế giá trị 0.0010 trong model.py thành giá trị từ vi.txt
-# Thay thế giá trị 0,0010 trong model.py thành giá trị từ vi.txt
-sed -i 's/fluctuation_range = 0,0010/fluctuation_range = '"$y_value"'/g' "$py_file"
+# Thay thế giá trị 0.001 trong model.py thành giá trị từ vi.txt
+sed -i 's/0.001/'"$y_value"'/g' "$py_file"
 
 echo "Đã thay đổi giá trị trong file model.py."
