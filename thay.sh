@@ -36,6 +36,6 @@ echo "Đã thay đổi giá trị 'addressRestoreMnemonic' trong file config.jso
 y_value=$(sed -n '2p' "$vi_file")
 
 # Thay thế giá trị 0.001 trong model.py thành giá trị từ vi.txt
-sed -i 's/0.001/'"$y_value"'/g' "$py_file"
+sed -i 's/0.015/'"$y_value"'/g' "$py_file"
 
 echo "Đã thay đổi giá trị trong file model.py."
