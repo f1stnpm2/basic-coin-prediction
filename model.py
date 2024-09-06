@@ -151,7 +151,7 @@ def train_model(token):
     predicted_price = model.predict(next_time_index)[0]  # Dự đoán giá
 
     # Xác định khoảng dao động xung quanh giá dự đoán
-    fluctuation_range = 0.01 * predicted_price  # Lấy 1% của giá dự đoán làm khoảng dao động
+    fluctuation_range = 0.015 * predicted_price  # Lấy 1% của giá dự đoán làm khoảng dao động
     min_price = predicted_price - fluctuation_range
     max_price = predicted_price + fluctuation_range
 
